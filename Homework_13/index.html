@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <section id="contact" class="contact">
+      <form class="contact__form form">
+        <div class="wrapper--grey">
+          <div class="form__inner">
+            <h2 class="form__title section-title">We would like to help you</h2>
+
+            <div class="form__data">
+              <input
+                class="form__input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+              <textarea
+                class="form__input"
+                id="message"
+                name="message"
+                placeholder="Message"
+                minlength="5"
+              ></textarea>
+            </div>
+
+            <div class="form__contacts">
+              <h3 class="form__subtitle">How to answer you?</h3>
+              <input
+                class="form__input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone number (+380)"
+                pattern="^\+380\d{9}$"
+              />
+              <input
+                class="form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                required
+              />
+            </div>
+
+            <button type="submit" class="form__btn button">Send message</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <script src="homework_13_1.js"></script>
+  </body>
+</html>
