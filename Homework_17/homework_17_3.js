@@ -1,22 +1,23 @@
 class BankAccount {
+  #balance;
   constructor(currentBalance = 0) {
-    this.balance = currentBalance;
+    this.#balance = currentBalance;
   }
 
   deposit(depositAmount) {
-    this.balance += depositAmount;
+    this.#balance += depositAmount;
   }
 
   withdraw(withdrawAmount) {
-    if (withdrawAmount > 0 && withdrawAmount <= this.balance) {
-      this.balance -= withdrawAmount;
+    if (withdrawAmount > 0 && withdrawAmount <= this.#balance) {
+      this.#balance -= withdrawAmount;
     } else {
       console.log("You don't have enough money");
     }
   }
 
   getBalance() {
-    return this.balance;
+    return this.#balance;
   }
 }
 
