@@ -1,4 +1,4 @@
-const timerSecondsQuantity = 25;
+const timerSecondsQuantity = 85;
 
 function startTimer(timerDuration) {
   let timer = timerDuration;
@@ -8,10 +8,8 @@ function startTimer(timerDuration) {
     const minutesQuantity = parseInt(timer / 60);
     const secondsQuantity = parseInt(timer % 60);
 
-    const minutesToDisplay =
-      minutesQuantity < 10 ? '0' + minutesQuantity : minutesQuantity;
-    const secondsToDisplay =
-      secondsQuantity < 10 ? '0' + secondsQuantity : secondsQuantity;
+    const minutesToDisplay = minutesQuantity.toString().padStart(2, '0');
+    const secondsToDisplay = secondsQuantity.toString().padStart(2, '0');
 
     timerDisplay.textContent = minutesToDisplay + ':' + secondsToDisplay;
 
