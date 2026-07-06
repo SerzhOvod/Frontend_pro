@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.weather-container {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffffff;
+  width: 550px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Левая панель: Дата, Время, Параметры */
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-info {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.sun-battery-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.time-display {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: baseline;
+}
+
+.time-display span {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+.weather-metrics {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Правая панель: Иконка, Температура, Кнопка */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-align: right;
+  width: 200px;
+}
+
+.weather-icon-box img {
+  width: 100px;
+  height: 100px;
+  margin-top: -10px;
+}
+
+.temperature-box {
+  margin-top: 10px;
+}
+
+.current-temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.feels-like {
+  font-size: 1.1rem;
+  margin-top: 5px;
+  opacity: 0.85;
+}
+
+.weather-desc {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Нижний ряд с датой обновления и кнопкой */
+.bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.update-time {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.refresh-btn:hover {
+  transform: rotate(180deg);
+}
+
+.refresh-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+/* Анимация загрузки */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 60, 114, 0.85);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: none;
+}

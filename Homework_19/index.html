@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="weather-container">
+      <div class="loading-overlay" id="loading">Завантаження...</div>
+
+      <!-- Левая сторона -->
+      <div class="left-panel">
+        <div class="date-info" id="current-date">Jun 13, 2015 - Sat</div>
+        <div class="sun-battery-info">
+          <span id="sunrise-time">☀️ SUN 8:30 AM</span>
+          <span id="battery-status">🔋 27%</span>
+        </div>
+        <div class="time-display" id="time-box">
+          03:02 <span id="ampm">PM</span>
+        </div>
+        <div class="weather-metrics">
+          <div id="humidity">Humidity: --%</div>
+          <div id="pressure">Pressure: ---- hPa</div>
+          <div id="wind">Wind: -- km/h SSE</div>
+        </div>
+      </div>
+
+      <!-- Правая сторона -->
+      <div class="right-panel">
+        <div class="weather-icon-box">
+          <img
+            id="weather-icon"
+            src="https://openweathermap.org"
+            alt="Weather Icon"
+          />
+        </div>
+        <div class="temperature-box">
+          <div class="current-temp" id="temp">--°C</div>
+          <div class="feels-like" id="feels-like">Feels Like: --°C</div>
+          <div class="weather-desc" id="weather-desc">Partly Cloudy</div>
+        </div>
+        <div class="bottom-actions">
+          <div class="update-time" id="update-date">Jun 13 11:02 PM</div>
+          <button class="refresh-btn" id="refresh-btn" title="Оновити дані">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="homework_19_1.js"></script>
+  </body>
+</html>
