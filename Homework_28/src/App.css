@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.2;
+  font-size: 18px;
+  background-color: #66deb2;
+}
+
+.header {
+  background-color: var(--header-bg);
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.4s ease;
+  }
+
+  a:hover {
+    transform: scale(1.2);
+  }
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 75%;
+  min-height: 100vh;
+}
+
+.form {
+  background: #fff;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.form__input {
+  min-height: 25px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #7e7e7e;
+}
+
+.form__btn {
+  background: #0be69d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.todo-item {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 18px;
+  height: 18px;
+  border: 2px solid #00adb5;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  display: inline-grid;
+  place-content: center;
+}
+
+.checkbox:checked {
+  background-color: #00adb5;
+}
+
+.checkbox::before {
+  content: '';
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) scale(0);
+  transition: transform 100ms ease-in-out;
+}
+
+.checkbox:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.todo-item--checked .todo-item__description {
+  text-decoration: line-through;
+  color: #888;
+}
+.todo-item__description {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+.todo-item__delete {
+  background: #0be69d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 95px;
+  padding: 10px;
+}
+
+.change__color-btn {
+  color: #0be69d;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 95px;
+  padding: 10px;
+}
