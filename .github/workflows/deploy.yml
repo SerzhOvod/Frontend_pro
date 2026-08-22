@@ -1,39 +1,58 @@
-name: Deploy SWAPI App to GitHub Pages
+name: Deploy SWAPI Redux App
 
 on:
   push:
     branches:
-      - main # Скрипт будет срабатывать, когда вы делаете push в ветку main
+      - main
+
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Homework_30/swapi-redux-app
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
         with:
-          node-size: 20
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Homework_30/swapi-redux-app/package-lock.json
 
       - name: Install dependencies
-        # Скрипт сам зайдет в нужную папку и установит пакеты
-        run: |
-          cd Homework_30/swapi-redux-app
-          npm install
+        run: npm ci
 
-      - name: Build project
-        # Скрипт соберет проект внутри подпапки
-        run: |
-          cd Homework_30/swapi-redux-app
-          npm run build
+      - name: Build
+        run: npm run build
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: Homework_30/swapi-redux-app/dist
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: Homework_30/swapi-redux-app/dist # Указываем точный путь к собранной папке dist
-          branch: gh-pages # Папка dist отправится в ветку gh-pages
+        id: deployment
+        uses: actions/deploy-pages@v4
