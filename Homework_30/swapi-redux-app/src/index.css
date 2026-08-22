@@ -1,0 +1,158 @@
+/* Загальний фон сторінки та системні шрифти */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; 
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.app-container {
+  background-color: #ffffff;
+  width: 90vw;
+  max-width: 800px;
+  min-height: 600px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Легка тінь картки */
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+.app-header h1 {
+  margin: 0 0 25px 0;
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.request-bar {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+
+.api-url-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background-color: #fafafa;
+  color: #333333;
+  outline: none;
+}
+
+
+.btn-get-info {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #e0e0e0;
+  color: #555555;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-get-info:hover {
+  background-color: #d5d5d5;
+}
+
+.btn-get-info:disabled {
+  background-color: #f0f0f0;
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+.dynamic-badge-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; 
+  padding: 3px 10px;
+  width: fit-content;
+  user-select: none;
+}
+
+.entity-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3c4043;
+  padding: 1px 6px;
+  background-color: #f1f3f4; 
+  border-radius: 10px;
+  border: 1px solid #dadce0;
+}
+
+.entity-id-badge {
+  color: #202124;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 1px 6px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 12px;
+  background-color: #f1f3f4; 
+  border: 1px solid #dadce0;
+}
+
+.response-container {
+  flex: 1;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #ffffff;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.response-container pre {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #222222;
+  white-space: pre-wrap;
+}
+
+.app-footer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-start; /
+}
+
+.btn-clear {
+  padding: 8px 18px;
+  font-size: 13px;
+  background-color: #ffcc00; 
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.15s;
+}
+
+.btn-clear:hover {
+  background-color: #e6b800;
+}
