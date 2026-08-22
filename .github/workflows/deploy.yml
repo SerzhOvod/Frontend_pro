@@ -1,0 +1,39 @@
+name: Deploy SWAPI App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Скрипт будет срабатывать, когда вы делаете push в ветку main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-size: 20
+
+      - name: Install dependencies
+        # Скрипт сам зайдет в нужную папку и установит пакеты
+        run: |
+          cd Homework_30/swapi-redux-app
+          npm install
+
+      - name: Build project
+        # Скрипт соберет проект внутри подпапки
+        run: |
+          cd Homework_30/swapi-redux-app
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: Homework_30/swapi-redux-app/dist # Указываем точный путь к собранной папке dist
+          branch: gh-pages # Папка dist отправится в ветку gh-pages
