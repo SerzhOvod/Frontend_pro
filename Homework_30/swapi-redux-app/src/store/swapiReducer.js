@@ -2,7 +2,7 @@ const initialState = {
   data: null,
   loading: false,
   error: null,
-  searchUrl: 'http://swapi.py4e.com/api/',
+  searchUrl: 'https://swapi.py4e.com/api/',
 };
 
 export const fetchSwapiData = url => {
