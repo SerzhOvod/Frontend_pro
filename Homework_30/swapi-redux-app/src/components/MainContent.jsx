@@ -27,7 +27,7 @@ export default function MainContent({
           onChange={onUrlChange}
           placeholder="Введіть URL запиту"
         />
-        <ButtonGetInfo onClick={handleSubmit} disabled={loading} />
+        <ButtonGetInfo disabled={loading} />
       </form>
 
       {data && !error && <Badge searchUrl={searchUrl} onClear={onClearData} />}
