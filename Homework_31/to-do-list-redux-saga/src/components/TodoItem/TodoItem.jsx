@@ -6,7 +6,7 @@ import { CancelButton } from '../Buttons/CancelButton';
 import { EditButton } from '../Buttons/EditButton';
 import { DeleteButton } from '../Buttons/DeleteButton';
 
-function TodoItem({ todo }) {
+function ToDoItem({ todo }) {
   const dispatch = useDispatch();
 
   const [isEditing, setIsEditing] = useState(false);
@@ -110,4 +110,4 @@ function TodoItem({ todo }) {
   );
 }
 
-export default TodoItem;
+export default ToDoItem;

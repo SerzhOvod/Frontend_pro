@@ -1,13 +1,13 @@
-import TodoItem from '../TodoItem/TodoItem';
+import ToDoItem from '../ToDoItem/ToDoItem';
 
-export function TodoList({ todos }) {
+function ToDoList({ todos }) {
   return (
     <ul className="todo-list">
       {todos.map(todo => (
-        <TodoItem key={todo.id} todo={todo} />
+        <ToDoItem key={todo.id} todo={todo} />
       ))}
     </ul>
   );
 }
 
-export default TodoList;
+export default ToDoList;

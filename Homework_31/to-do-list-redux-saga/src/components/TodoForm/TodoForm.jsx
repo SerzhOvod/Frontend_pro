@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-export function TodoForm() {
+export function ToDoForm() {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
 

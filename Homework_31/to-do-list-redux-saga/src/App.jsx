@@ -5,9 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchTodosRequest } from './redux/todoSlice';
 
-// Components
-import { TodoForm } from './components/TodoForm/TodoForm';
-import { TodoList } from './components/TodoList/TodoList';
+import { ToDoForm } from './components/ToDoForm/ToDoForm';
+import ToDoList from './components/ToDoList/ToDoList';
 import { Footer } from './components/Footer/Footer';
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
       <div className="todo-card">
         <h2>Todo</h2>
 
-        <TodoForm />
+        <ToDoForm />
 
         <h2>Todos</h2>
 
@@ -40,7 +39,7 @@ function App() {
 
         {error && <p>Error: {error}</p>}
 
-        <TodoList todos={todos} />
+        <ToDoList todos={todos} />
 
         {todos.length > 0 && <button onClick={handleClear}>Clear all</button>}
 
