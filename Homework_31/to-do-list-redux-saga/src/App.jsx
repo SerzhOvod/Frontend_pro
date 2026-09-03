@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchTodosRequest } from './redux/todoSlice';
 
-import { TodoForm } from './components/ToDoForm/ToDoForm';
-import { TodoList } from './components/ToDoList/ToDoList';
+import { TodoForm } from './components/TodoForm/TodoForm';
+import { TodoList } from './components/TodoList/TodoList';
 import { Footer } from './components/Footer/Footer';
 
 function App() {

@@ -1,4 +1,4 @@
-import TodoItem from '../ToDoItem/ToDoItem';
+import TodoItem from '../TodoItem/TodoItem';
 
 export function TodoList({ todos }) {
   return (
