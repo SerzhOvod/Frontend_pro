@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchTodosRequest } from './redux/todoSlice';
 
+// Components
 import { TodoForm } from './components/TodoForm/TodoForm';
 import { TodoList } from './components/TodoList/TodoList';
 import { Footer } from './components/Footer/Footer';
